@@ -46,8 +46,26 @@ contents =  [
         label => l('Date/Time and Place of an Event Note: '),
         xpath => '//*[@tag="518"]'
     }, {
+        label => l('Summary: '),
+        xpath => '//*[@tag="520"  and @ind1!="0" and @ind1!="1" and @ind1!="2" and @ind1!="3" and @ind1!="4" and @ind1!="8"]'
+    }, {
+        label => l('Subject: '),
+        xpath => '//*[@tag="520" and @ind1="0"]'
+    }, {
+        label => l('Review: '),
+        xpath => '//*[@tag="520" and @ind1="1"]'
+    }, {
+        label => l('Scope and content: '),
+        xpath => '//*[@tag="520" and @ind1="2"]'
+    }, {
+        label => l('Abstract: '),
+        xpath => '//*[@tag="520" and @ind1="3"]'
+    }, {
+        label => l('Content advice: '),
+        xpath => '//*[@tag="520" and @ind1="4"]'
+    }, {
         label => l('Summary, etc.: '),
-        xpath => '//*[@tag="520"]'
+        xpath => '//*[@tag="520" and @ind1="8"]'
     }, {
         label => l('Target Audience Note: '),
         xpath => '//*[@tag="521"]'
