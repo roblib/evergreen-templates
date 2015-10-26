@@ -23,7 +23,10 @@
 
             [% setting = 'opac.hold_notify' %]
             <tr>
-                [%# WCAG insists that labels for checkboxes contain the input
+                <td>
+                    You will be notified when a hold is ready for pickup by email.
+                </td>
+               <!--  [%# WCAG insists that labels for checkboxes contain the input
                     or directly follow the input, which would not look right
                     with the rest of the table.  As an alternative, we can
                     repeat the label as a title attr.
@@ -35,7 +38,7 @@
                     <input id='[% setting %].email' name='[% setting %].email' 
                         type="checkbox" title="[% email_label %]"
                         [% IF (matches = ctx.user_setting_map.$setting.match('email')); %] checked='checked' [% END %]/>
-                </td>
+                </td> -->
             </tr>
             [%- IF allow_phone_notifications == 'true';
                 setting = 'opac.hold_notify'; 

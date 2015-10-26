@@ -1,18 +1,13 @@
 <!-- JS imports, etc.  -->
 <script type="text/javascript" src="[% ctx.media_prefix %]/js/ui/default/opac/simple.js"></script>
 
-<!-- DOB validation for Patron Registration in OPAC -->
+<!-- Rob Addded this (ask us widget)  -->
 <script type="text/javascript">
-    function dobValidate(input) {
-        var validformat = /^(19|20)\d\d([- /.])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$/
-        var returnval = false
-        if (!validformat.test(input.value))
-            alert("You have entered an invalid date, or an improperly formatted date.  Please enter Date of Birth in YYYY-MM-DD or YYYY/MM/DD format and try again.")
-        else
-            returnval = true
-        if (returnval == false) input.select()
-        return returnval
-}
+  (function() {
+    var x = document.createElement("script"); x.type = "text/javascript"; x.async = true;
+    x.src = (document.location.protocol === "https:" ? "https://" : "http://") + "ca.libraryh3lp.com/js/libraryh3lp.js?5343";
+    var y = document.getElementsByTagName("script")[0]; y.parentNode.insertBefore(x, y);
+  })();
 </script>
 
 [%- IF ctx.use_stripe %]

@@ -1,2 +1,4 @@
-       <div id="topnav_logo"> <a href="/"><img alt="[% l('Evergreen Logo') %]" 
-            src="[% ctx.media_prefix %]/opac/images/small_logo.png" /></a></div>
+       <!-- <div id="topnav_logo"> <a href="http://home.upei.ca"><img alt="[% l('Evergreen Logo') %]" 
+            src="[% ctx.media_prefix %]/opac/images/small_logo_new.png" /></a></div> -->
+            <div id="topnav_logo"> <a href="http://home.upei.ca"><img alt="[% l('Evergreen Logo') %]" 
+            src="http://files.upei.ca/misc/upeishield.png" /></a></div>

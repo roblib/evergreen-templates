@@ -4,18 +4,16 @@
     ctx.page_title = l("Advanced Search");
     pane = CGI.param("pane") || "advanced";
     loc = ctx.search_ou;
-
-    ctx.metalinks.push('<meta name="robots" content="noindex">');
 -%]
     <h2 class="sr-only">[% l('Advanced Search') %]</h2>
     <div id="search-wrapper">
         <div id="search-box">
-            <span class="search_catalog_lbl mobile_hide">[% l('Search the Catalog') %]</span>
+            <span class="search_catalog_lbl mobile_hide">[% l('Search the Catalogue') %]</span>
             <span class="adv_search_catalog_lbl"><a href="[% mkurl(ctx.opac_root _ '/home') %]"
                     id="home_adv_search_link">[%l('Basic Search')%]</a></span>
 
             <span class="browse_the_catalog_lbl"><a href="[% mkurl(ctx.opac_root _ '/browse') %]">[%
-                    l('Browse the Catalog')%]</a></span>
+                    l('Browse the Catalogue')%]</a></span>
         </div>
         <div id="adv_search_parent">
             <div id="adv_search_tabs">
@@ -42,6 +40,9 @@
             [% INCLUDE "opac/parts/advanced/expert.tt2" %]
             [% END %]
             </div>
+            <!-- rob added -->
+            [% INCLUDE "opac/parts/askus.tt2" %]
+            <!-- end of rob added -->
             <div class="common-full-pad"></div>	
         </div>
     </div>

@@ -1,36 +1,32 @@
 [% 
     subjects = [
-        {
-            label => l('Subject: '),
-            xpath => '//*[@tag="600" or @tag="610" or @tag="611" or @tag="630" or @tag="650" or @tag="651"]'
-        }, {
-            label => l('Genre: '),
-            xpath => '//*[@tag="655"]|//*[@tag="659"]'
-        }, {
-            label => l('Topic Heading: '),
-            xpath => '//*[@tag="690"]'
-        }, {
-            label => l('Geographic Setting: '),
-            xpath => '//*[@tag="691"]'
-        }, {
-            label => l('Biographical Subject: '),
-            xpath => '//*[@tag="692"]'
-        }, {
-            label => l('Character Attributes: '),
-            xpath => '//*[@tag="693"]'
-        }, {
-            label => l('Setting: '),
-            xpath => '//*[@tag="698"]'
-        }, {
-            label => l('Time Period: '),
-            xpath => '//*[@tag="699"]'
-        }
-    ];
+            {
+                label => l('Subject (Name): '),
+                xpath => '//*[@tag="600" or @tag="610"]'
+            }, {
+                label => l('Subject (Meeting Name): '),
+                xpath => '//*[@tag="611"]'
+            }, {
+                label => l('Subject (Standard Title): '),
+                xpath => '//*[@tag="630"]'
+            }, {
+                label => l('Subject: '),
+                xpath => '//*[@tag="650" or @tag="653" or @tag="690"]'
+            }, {
+                label => l('Subject (Time Period): '),
+                xpath => '//*[@tag="648"]'
+            }, {
+                label => l('Subject (Geographic): '),
+                xpath => '//*[@tag="651"]'
+            }, {
+                label => l('Genre: '),
+                xpath => '//*[@tag="655"]'
+            }
+        ];
 
     BLOCK render_subject;
         xpath = xpath || '//*[starts-with(@tag,"6")]';
         FOR node IN ctx.marc_xml.findnodes(xpath);
-            '<span property="about">';
             all_terms = [];
             graphics = [];
             FOR subfield IN node.childNodes;
@@ -48,7 +44,7 @@
                 all_terms.push(subfield.textContent.replace('\-', ' ').replace('[#"^$\+,\.:;&|\[\]()]', ''));
                 total_term = all_terms.join(" ").replace('\s+$', '');
             %]
-<a href="[% mkurl(ctx.opac_root _ '/results', {qtype=>'subject', query=>total_term}, stop_parms.merge(expert_search_parms, general_search_parms, browse_search_parms, facet_search_parms)) %]" rel="nofollow" vocab="">[% single_term %]</a>
+<a href="[% mkurl(ctx.opac_root _ '/results', {qtype=>'subject', query=>total_term}, stop_parms.merge(expert_search_parms, general_search_parms, browse_search_parms, facet_search_parms)) %]">[% single_term %]</a>
             [%- END;
             IF all_terms.size; "<br/>"; END;
             FOREACH link880 IN graphics;
@@ -56,7 +52,6 @@
                 link880.value | html;
                 '</div>';
             END;
-            '</span>';
         END;
     END 
 %]
@@ -70,7 +65,7 @@
             <tbody>
                 <tr>
                     <td class='rdetail_subject_type'>[% subj.label %]</td>
-                    <td class='rdetail_subject_value'>[% content %]</td>
+                    <td class='rdetail_subject_value' property='keywords'>[% content %]</td>
                 </tr>
             </tbody>
         </table>

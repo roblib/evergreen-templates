@@ -150,7 +150,11 @@ contents =  [
     }, {
         label => l('Source of Description Note: '),
         xpath => '//*[@tag="588"]'
-    } 
+    }, {
+        label => l('Robertson Library Holdings: '),
+        xpath => '//*[@tag="591"]'
+    }
+
 ];
 
 BLOCK render_contents;

@@ -39,7 +39,7 @@
                         /></a>
                     </td>
                 </tr>
-                [%- setting = 'opac.default_search_location'; -%]
+                <!-- [%- setting = 'opac.default_search_location'; -%]
                 <tr >
                     <td width='20%'><label for='[% setting %]'>[% l("Preferred search location") %]</label></td>
                     <td>
@@ -64,7 +64,7 @@
                             INCLUDE build_org_selector name=setting value=thang can_have_vols_only=1;
                         %]
                     </td>
-                </tr>
+                </tr> -->
                 [%- setting = 'history.circ.retention_start' -%]
                 <tr>
                     [% circ_name = l('Keep history of checked out items?') %]

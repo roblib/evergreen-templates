@@ -1,14 +1,14 @@
-<h3 class="sr-only">[% l('Catalog Search') %]</h3>
+<h3 class="sr-only">[% l('Catalogue Search') %]</h3>
 [% PROCESS "opac/parts/org_selector.tt2" %]
 <div id="search-wrapper">
     [% UNLESS took_care_of_form -%]
     <form action="[% ctx.opac_root %]/results" method="get">
     [%- END %]
     <div id="search-box">
-        <span class="search_catalog_lbl mobile_hide">[% l('Search the Catalog') %]</span>
+        <span class="search_catalog_lbl mobile_hide">[% l('Search the Catalogue') %]</span>
         <span class="adv_search_catalog_lbl"><a href="[% mkurl(ctx.opac_root _ '/advanced', {},  expert_search_parms.merge(browse_search_parms, facet_search_parms)) %]"
-            id="home_adv_search_link" rel="nofollow" vocab="">[% l('Advanced Search') %]</a></span>
-        <span class="browse_the_catalog_lbl"><a href="[% mkurl(ctx.opac_root _ '/browse', {}, expert_search_parms.merge(general_search_parms, facet_search_parms, ['fi:has_browse_entry'])) %]" rel="nofollow" vocab="">[% l('Browse the Catalog') %]</a></span>
+            id="home_adv_search_link">[% l('Advanced Search') %]</a></span>
+        <span class="browse_the_catalog_lbl"><a href="[% mkurl(ctx.opac_root _ '/browse', {}, expert_search_parms.merge(general_search_parms, facet_search_parms, ['fi:has_browse_entry'])) %]">[% l('Browse the Catalogue') %]</a></span>
     </div>
     <div class="searchbar">
         <span class='search_box_wrapper'>
@@ -51,18 +51,15 @@
             END;
         -%]
         </label>
-        <label id="search_locg_label" for="search_org_selector">
+        <!-- <label id="search_locg_label" for="search_org_selector">
         [%- 
             l('Library: ');
             select_lib_label = l("Select search library");
             INCLUDE build_org_selector arialabel=select_lib_label 
               id='search_org_selector' show_loc_groups=1
         -%]
-        </label>
+        </label> -->
     <span>
-    [%- IF (show_more_details.default == 'true' OR show_more_details.default == 'hide') AND !CGI.param('detail_record_view') %]
-        <input id="detail" type="hidden" name="detail_record_view" value="1"/>
-    [%- END %]
         <input id='search-submit-go' type="submit" value="[% l('Search') %]" class="opac-button"
             onclick='setTimeout(function(){$("search-submit-spinner").className=""; $("search-submit-go").className="hidden"}, 2000)'/>
         <img id='search-submit-spinner' src='/opac/images/progressbar_green.gif' style='height:16px;width:16px;' class='hidden' alt='[% l("Search In Progress") %]'/>
@@ -99,14 +96,14 @@
     [% UNLESS took_care_of_form %]</form>[% END %]
     [% IF (is_advanced AND NOT is_special) AND CGI.param('qtype') %]
     <div class="opac-auto-102">
-        [ <a href="[% mkurl(ctx.opac_root _ '/advanced') %]" rel="nofollow" vocab="">[%
+        [ <a href="[% mkurl(ctx.opac_root _ '/advanced') %]">[%
             l('Refine My Original Search')
         %]</a> ]
     </div>
     [% END %]
     <!--
     <div id="breadcrumb">
-        <a href="[% ctx.opac_root %]/home">[% l('Catalog Home') %]</a> &gt;
+        <a href="[% ctx.opac_root %]/home">[% l('Catalogue Home') %]</a> &gt;
     </div>
     -->
     <div class="clear-both"></div>

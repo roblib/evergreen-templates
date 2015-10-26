@@ -12,8 +12,11 @@ authors = [
         type => 'added', 
         label => l('Added Author'),
         xpath => '//*[@tag="700"]|//*[@tag="710"]|//*[@tag="711"]'
-    },
-     {
+    }, {
+        type => 'cast', 
+        label => l('Cast'),
+        xpath => '//*[@tag="508"]'
+    }, {
         type => 'notes', 
         label => l('Author Notes: '),
         xpath => '' # Comes from added content...
