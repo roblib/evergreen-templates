@@ -91,6 +91,7 @@ facet.display = [
     {facet_class => 'subject', facet_order => ['topic',  'geographic', 'name', 'temporal']},
     {facet_class => 'author',  facet_order => ['personal', 'corporate']},
     {facet_class => 'series',  facet_order => ['seriestitle']},
+    {facet_class => 'keyword',  facet_order => ['publisher']},
 ];
 facet.default_display_count = 5;
 
