@@ -54,10 +54,10 @@
                 <span class="place_hold">[% l('Place Hold') %]</span></a>
             </div>
             [%- ELSE -%]
-            <div class="rdetail_aux_utils place_hold_unavailable mobile_hide">
+            <div class="rdetail_aux_utils place_hold_unavailable">
                 <img src="[% ctx.media_prefix %]/images/grey_check.png" 
                     [% img_alt(l('Unable to Place Hold on [_1]', attrs.title)) %]/>
-                <span class="place_hold_unavailable">[% l('Unable to place hold; ask staff for help') %]</span>
+                <span class="place_hold_unavailable">[% l('Unable to place hold') %]<span class="mobile_hide">[% l('; ask staff for help') %]</span></span>
             </div>
             [%- END -%]
             <div class="rdetail_aux_utils toggle_list">
