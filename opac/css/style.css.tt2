@@ -1,6 +1,7 @@
 [%-
     PROCESS "opac/parts/css/colors.tt2";
     PROCESS "opac/parts/css/fonts.tt2";
+    PROCESS "opac/css/style-extra.css.tt2";
 %]
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500,500italic,700,700italic,400italic,300italic,100|Roboto+Condensed:400,300,700|Roboto+Slab:400,700);
 body {

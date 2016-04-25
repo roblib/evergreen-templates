@@ -1,0 +1,3 @@
+.place_hold_unavailable {
+  color: [% css_colors.accent_dark %];
+}
